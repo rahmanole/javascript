@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+</head>
+
+<body>
+	<p id="demo"></p>
+	<script>
+		var n = parseInt(prompt("Enter a number"));
+		if(n<0){
+			document.write("Enter a positive number");
+		}else{
+			var res = 1;
+			for(var i = 1;i<=n;i++){
+				res*=i;
+			}
+			document.write("Factorial of "+n+" is "+res!);
+		}
+		
+		
+	</script>
+</body>
+</html>

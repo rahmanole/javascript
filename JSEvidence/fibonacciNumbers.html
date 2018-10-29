@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+</head>
+
+<body>
+	<p id="demo"></p>
+	<script>
+		var n = parseInt(prompt("Enter a number"));
+		var n1 = 0;
+		var n2 = 1;
+		var n3;
+		var fibo
+		if(n>0){
+			document.write("First "+n+" Fibonacci numbers are "+n1+" "+n2+" ");
+			for(var i=2;i<=n;i++){
+			n3 = n1 + n2;
+				document.write(n3+" ");
+				n1 = n2;
+				n2 = n3;
+			}
+		}else{
+			document.write("Enter a positive number");
+		}
+		
+		
+	</script>
+</body>
+</html>

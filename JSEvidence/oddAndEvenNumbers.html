@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+</head>
+
+<body>
+	<p id="demo"></p>
+	<script>
+		var n1 = parseInt(prompt("Enter initial number"));
+		var n2 = parseInt(prompt("Enter final number"));
+		
+		if(n1>n2){
+			document.write("Your initial number is larger than final number!!");
+		}else if(n1==n2){
+			document.write("Your initial number and final number is equal!");
+		}else if(n1<=0 || n2<=0){
+			document.write("Both numbers must be greater than 0!");
+		}else{
+			document.write("All even numbers:<br>");
+			for(var i = n1;i<=n2;i++){
+				if(i%2==0){
+					document.write(i+"<br>");
+				}
+			}
+			document.write("All odd numbers:<br>");
+			for(var i = n1;i<=n2;i++){
+				if(i%2!=0){
+					document.write(i+"<br>");
+				}
+			}
+		}
+		
+	</script>
+</body>
+</html>

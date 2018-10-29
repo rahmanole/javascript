@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+</head>
+
+<body>
+	<p id="demo"></p>
+	<script>
+		var number = parseInt(prompt("Enter a number"));
+		for(var n = 0;n<=number;n++){
+			var flag = true;
+			var m = n/2;
+			if(n==0||n==1){  
+				flag = false;      
+			}else{
+				for(var i = 2;i<=m;i++){
+					if(n%i==0){
+						flag = false;
+					}
+				}	
+			}
+		
+		
+			if(flag){
+				document.write(n+" is a prime number!!<br>");
+			}
+		}
+		
+	</script>
+</body>
+</html>

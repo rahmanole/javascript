@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+</head>
+
+<body>
+	<form name="form" onsubmit="validateMail()">
+		<input type="text" name="email"/>
+		<input type="submit" value="Submit"/>
+	</form>
+<script>
+	function validateMail(){
+    	var email = document.forms["form"]["email"].value;
+	var emailPat = /[a-zA-Z0-9][a-zA-Z0-9_.]*[@][a-zA-Z0-9]+([.][a-zA-Z]+)+/;
+     document.write(emailPat.test(email));
+    }
+   
+</script>
+</body>
+</html>

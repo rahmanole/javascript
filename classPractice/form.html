@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.mainDiv{
+				width:70%;
+				margin:0 auto;
+			}
+			.errMsgs{
+				margin-left:15px;
+				font-size:20px;
+				color:red;
+			}
+		</style>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<div class="mainDiv">
+			<form name="form" onsubmit="return formValidation()" method="post">
+				<label>First Name:</label><br/>
+				<input type="text" name="fname"><label class="errMsgs" id="erfname"></label><br/>
+				
+				<label>Last Name:</label><br/>
+				<input type="text" name="lname"/><label class="errMsgs" id="erlname"></label><br/>
+				
+				<label>Email:</label><br/>
+				<input type="text" name="email"/><label class="errMsgs" id="eremail"></label><br/>
+				
+				<label>Gender:</label><label class="errMsgs" id="ergender"></label><br/>
+				<input type="radio" name="gender" value="Male"/>Male<br/>
+				<input type="radio" name="gender" value="Female"/>Fmale<br/>
+				
+				<label>Education:</label><label class="errMsgs" id="eredu"></label><br/>
+				<input type="checkbox" name="ssc" value="SSC"/>SSC<br/>
+				<input type="checkbox" name="hsc" value="HSC"/>HSC<br/>
+				
+				<label>Round:</label><label class="errMsgs" id="erround"></label><br/>
+				<select name="round"> 
+					<option>Round 39</option>
+					<option selected>Round 40</option>
+					<option>Round 41</option>
+				</select><br/>
+				
+				<label>Password:</label><br/>
+				<input type="password" name="pass1"/><label class="errMsgs" id="erpass1"></label><br/>
+				<label>Confirm Password:</label><br/>
+				<input type="password" name="pass2"/><label class="errMsgs" id="erpass2"></label><br/>
+				<label class="errMsgs" id="matches"></label><br/>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+		<div>
+			<button onClick="closeWindow()">Close Window</button>
+		</div>
+		<script>
+			var win;
+			function closeWindow(){
+				win.close();
+			}
+			
+			function formValidation(){
+			
+				var fname = document.forms["form"]["fname"].value;
+				var lname = document.forms["form"]["lname"].value;
+				
+				var email = document.forms["form"]["email"].value;
+				
+				var gender = document.forms["form"]["gender"].value;
+				
+				var ssc = document.forms["form"]["ssc"].value;
+				var hsc = document.forms["form"]["hsc"].value;
+				
+				var round = document.forms["form"]["round"].value;
+				
+				var pass1 = document.forms["form"]["pass1"].value;
+				var pass2 = document.forms["form"]["pass2"].value;
+				
+				var education = "";
+				if(document.forms["form"].ssc.checked){
+					education = document.forms["form"]["ssc"].value;
+				}
+				
+				if(document.forms["form"].ssc.checked){
+					education = document.forms["form"]["ssc"].value;
+				}
+				
+				
+				//For names
+				if(fname.length < 3 ){
+					//document.write("fill out");
+					document.getElementById('erfname').innerHTML = "Name must be atleast 3 charcter long!!!";
+					return false;
+				}
+				
+				if(fname.length < 3 ){
+					//document.write("fill out");
+					document.getElementById('erfname').innerHTML = "Name must be atleast 3 charcter long!!!";
+					return false;
+				}
+				
+				//For email
+				if(lname.length < 3 ){
+					//document.write("fill out");
+					document.getElementById('erlname').innerHTML = "Name must be atleast 3 charcter long!!!";
+					return false;
+				}
+				
+				//For gender
+				if(gender == ""){
+					document.getElementById("ergender").innerHTML = "Select your gender!";
+					return false;
+				}
+				
+				//For educations
+				if(!document.forms["form"].ssc.checked && !document.forms["form"].hsc.checked){
+					document.getElementById("eredu").innerHTML = "Enter your educations!";
+					return false;
+				}
+				
+				//For round
+				if(round == ""){
+					document.getElementById("erround").innerHTML = "Select your round!";
+					return false;
+				}
+				
+				//For password
+				if(pass1.length<2){
+					document.getElementById("erpass1").innerHTML = "Password must be 8 characters long!!";
+					return false;
+				}
+				if(pass2.length<2){
+					document.getElementById("erpass2").innerHTML = "Password must be 8 characters long!!";
+					return false;
+				}
+				if(pass1 != pass2){
+					document.getElementById("matches").innerHTML = "Password does not matched!!";
+					return false;
+				}else{
+					win = window.open("","","width=400");
+					win.document.write("<h2><center>Form Output</center></h2><hr>");
+
+					win.document.write("Name: " + fname + "<br/>");
+					win.document.write("Gender: " + gender + "<br/>");
+
+                    win.document.write("Education: " +education+ "<br/>");
+                    win.document.write("Round: " + round + "<br/>");
+                   win.document.write("Comments: " + msg + "<br/>");
+					
+				}
+				
+			}
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script language="javascript">
+			printExcept7();
+			multiplesOf15();
+			printExcept358();
+			print1to20();
+			printMultipleOf50();
+			function printExcept7(){
+				document.write("Print 1 to 10 except<br>");
+				for(var i=1;i<=10;i++){
+					if(i==7){
+						continue;
+					}
+					document.write(i+"<br>");
+				}
+			}
+			
+			function multiplesOf15(){
+				document.write("Print Multiple of 15 between 1 to 100<hr>");
+				for(var i=1;i<=1000;i++){
+					if(i%15!=0){
+						continue;
+					}
+					document.write(i+"<br>");
+				}
+			}
+			
+			function printExcept358(){
+				document.write("Print 1 to 10 except 3 5 8<hr>");
+				for(var i=1;i<=10;i++){
+					if(i==3 || i==5 || i==8){
+						continue;
+					}
+					document.write(i+"<br>");
+				}
+			}
+			
+			function print1to20(){
+				document.write("Print  1 to 20<hr>");
+				for(var i=1;i<=100;i++){
+					if(i>20){
+						break;
+					}
+					document.write(i+"<br>");
+				}
+			}
+			
+			function printMultipleOf50(){
+				document.write("Print from 1 to 49 between 1 to 100<hr>");
+				for(var i=1;i<=100;i++){
+					if(i%50==0){
+						break;
+					}
+					document.write(i+"<br>");
+				}
+			}
+        </script>
+    </body>
+</html>

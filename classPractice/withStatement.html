@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            label{
+                color: red;
+                padding: 3px 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Form Validation</h1>
+        <form name="myForm">
+            Name:<input type="text" name="name">
+			Email:<input type="text" name="email">
+			City:<input type="text" name="city">
+			<input type="button" value="Submit" onClick="showValues()">
+        </form>
+        <script language="javascript">
+            function showValues(){
+				with(document.myForm){
+					var fname = name.value;
+					var femail = email.value;
+					var fcity = city.value;
+				}
+				
+				alert(fname+" "+femail+" "+fcity);
+			}
+        </script>
+    </body>
+</html>

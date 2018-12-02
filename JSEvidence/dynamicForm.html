@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+	
+</style>
+</head>
+
+<body >
+
+<div class="">
+  	<form name="myform" method="post">
+		<input type="radio" name="color" value="blue" onclick="cngBgColor()">Blue<br>
+		<input type="radio" name="color" value="green" onclick="cngBgColor()">Grenn<br>
+		<input type="radio" name="color" value="yellow" onclick="cngBgColor()">Yellow<br>
+		<input type="text" name = "fname" oninput ="validateForm()"/><label id="erfname"></label>
+		
+		
+		
+	</form>
+		
+</div>
+	<script>
+		function cngBgColor(){
+			var col = document.myform.color.value;
+			
+				if(col=="blue"){
+					document.body.style.backgroundColor = col;
+				}else if(col=="green"){
+					document.body.style.backgroundColor = col;
+				}else if(col=="yellow"){
+					document.body.style.backgroundColor = col;
+				}
+		}
+		function validateForm(){
+			var fname = document.myform.fname.value;
+			if(fname.length>=3){
+				document.getElementById("erfname").innerHTML = fname+" OK!";
+				document.getElementById("erfname").style.color = "green";
+			}else if(fname.length<=3){
+				document.getElementById("erfname").innerHTML = "";
+			}
+			
+		}
+	</script>
+</body>
+</html>
